@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it"> <!-- Definisce la lingua della pagina come italiano -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Imposta il set di caratteri della pagina -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Rende la pagina responsiva -->
+    <meta name="author" content="Mourad Ouaragua"> <!-- Specifica l'autore della pagina -->
+    <meta name="description" content="Sito di prova"> <!-- Descrizione della pagina -->
+    <link rel="icon" href="immagini/loghi/logo.png" type="image/x-icon"> <!-- Icona della pagina -->
+    <link rel="stylesheet" href="/static/css/login.css"> <!-- Link al file CSS per gli stili -->
+    <title>Sito di prova</title> <!-- Titolo della pagina -->
+</head>
+
+<body>
+    <!-- Sidebar Sinistra -->
+    <div class="left-bar">
+        <div class="title-container">
+            <h2 id="title">TITOLO DI PROVA</h2> <!-- Titolo principale della sidebar -->
+        </div>
+
+        <div class="info-box-container">
+            <div class="info-box-1">
+                <h3 id="info-box-1-title"><strong>Titolo della info-box 1</strong></h3> <!-- Titolo della prima info box -->
+                <p id="info-box-1-text">Testo della info-box 1</p> <!-- Testo della prima info box -->
+            </div>
+            <div class="info-box-2">
+                <h3 id="info-box-2-title"><strong>Titolo della info-box 2</strong></h3> <!-- Titolo della seconda info box -->
+                <p id="info-box-2-text">Testo della info-box 2</p> <!-- Testo della seconda info box -->
+            </div>
+            <div class="info-box-3">
+                <h3 id="info-box-3-title"><strong>Titolo della info-box 3</strong></h3> <!-- Titolo della terza info box -->
+                <p id="info-box-3-text">Testo della info-box 3</p> <!-- Testo della terza info box -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Linea Centrale -->
+    <div class="margin-wrapper">
+        <div class="center-line"></div> <!-- Linea centrale di separazione -->
+    </div>
+
+    <!-- Sidebar Destra -->
+    <div class="right-bar">
+        <div class="credential-box">
+            <h2 id="right-bar-title">LOGIN</h2> <!-- Titolo del box di login -->
+            <form action="/login" method="POST">
+                <div class="input-box">
+                    <input type="text" id="username-input" name="username" required placeholder="Username" size="30"> <!-- Input per l'username -->
+    
+                    <!-- Campo password con toggle -->
+                    <div class="password-container">
+                        <input type="password" id="password-input" name="password" required placeholder="Password" size="30"> <!-- Input per la password -->
+                        <!-- Icona di toggle per la password -->
+                        <span id="togglePassword" class="toggle-password">👁️</span> <!-- Icona per mostrare/nascondere la password -->
+                    </div>
+                </div>
+                <div class="check-box-container">
+                    <input type="checkbox" name="remember-me" id="remember-me"> <!-- Checkbox per ricordare l'accesso -->
+                    <label for="remember-me">Rimanere connesso?</label> <!-- Etichetta per la checkbox -->
+                </div>
+                <div class="button-container">
+                    <button id="login-button" type="submit">Login</button> <!-- Pulsante di login -->
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/static/js/login.js"></script> <!-- Collega il file JavaScript per le funzionalità -->
+</body>
+</html>
+   

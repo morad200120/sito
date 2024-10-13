@@ -1,0 +1,218 @@
+/* Reset: Imposta box-sizing, margini e padding a zero per tutti gli elementi */
+* {
+  font-family: "Roboto", sans-serif; /* Font utilizzato per il sito */
+  box-sizing: border-box; /* Include padding e border nelle dimensioni totali degli elementi */
+  margin: 0; /* Rimuove i margini predefiniti */
+  padding: 0; /* Rimuove i padding predefiniti */
+}
+
+/* Corpo: Stile generale per il body */
+body {
+  height: 100vh; /* Imposta l'altezza del body al 100% della viewport */
+  overflow: hidden; /* Nasconde eventuali barre di scorrimento */
+  display: flex; /* Utilizza flexbox per il layout */
+}
+
+/* Contenitore per le barre laterali */
+.container {
+  display: flex; /* Dispone gli elementi in orizzontale */
+  width: 100%; /* Occupa l'intera larghezza */
+  justify-content: center; /* Centra orizzontalmente il contenuto */
+}
+
+/* Stili delle Sidebar: Imposta le barre laterali sinistra e destra */
+.left-bar,
+.right-bar {
+  display: flex; /* Utilizza flexbox per la disposizione interna */
+  flex-direction: column; /* Dispone gli elementi in colonna */
+  align-items: center; /* Allinea gli elementi al centro orizzontale */
+  justify-content: center; /* Allinea gli elementi al centro verticale */
+  width: 50%; /* Occupa il 50% della larghezza */
+  padding: 25px; /* Padding interno */
+  height: 100%; /* Occupa l'intera altezza */
+}
+
+.left-bar {
+  background: #141414; /* Colore di sfondo per la barra sinistra */
+  border-right: solid 1px #2c2c2c; /* Bordo destro per la barra sinistra */
+}
+
+.right-bar {
+  background: #1c1c1c; /* Colore di sfondo per la barra destra */
+}
+
+/* Stile di base per la center-line */
+.center-line {
+  width: 8px; /* Larghezza della linea centrale */
+  height: 100%; /* Altezza della linea centrale */
+  background: linear-gradient( /* Gradient per la linea centrale */
+    to bottom,
+    rgba(128, 0, 128, 0.1) 0%,
+    rgba(128, 0, 128, 0.2) 25%,
+    rgba(128, 0, 128, 0.9) 50%,
+    rgba(128, 0, 128, 0.2) 75%,
+    rgba(128, 0, 128, 0.1) 100%
+  );
+  background-size: 100% 300%; /* Dimensione del background */
+  animation: led-move 6s linear infinite; /* Animazione continua per la linea */
+  box-shadow: 0 0 15px rgba(128, 0, 128, 0.5); /* Ombra per la linea */
+  margin: 0 15px; /* Margine laterale */
+}
+
+/* Animazione per far "passare" la linea */
+@keyframes led-move {
+  0% {
+    background-position: 100% -100%; /* Posizione iniziale del background */
+  }
+  50% {
+    background-position: 100% 100%; /* Posizione intermedia del background */
+  }
+  100% {
+    background-position: 100% -100%; /* Posizione finale del background */
+  }
+}
+
+.margin-wrapper {
+  background-color: #141214; /* Colore di sfondo per il wrapper */
+}
+
+/* Contenitore delle Info Box: Stile per il contenitore delle informazioni */
+.info-box-container {
+  position: relative; /* Posizionamento relativo per il contenitore */
+  display: flex; /* Utilizza flexbox per la disposizione */
+  flex-direction: column; /* Dispone gli elementi in colonna */
+  align-items: center; /* Allinea gli elementi al centro orizzontale */
+  gap: 15px; /* Spazio tra gli elementi */
+  width: 100%; /* Occupa il 100% della larghezza */
+}
+
+.info-box-container div[class^="info"] {
+  display: flex; /* Utilizza flexbox per la disposizione interna */
+  flex-direction: column; /* Dispone gli elementi in colonna */
+  justify-content: center; /* Allinea gli elementi al centro verticale */
+  padding: 10px; /* Padding interno */
+  border-radius: 10px; /* Angoli arrotondati */
+  width: 440px; /* Larghezza fissa per le info box */
+  text-align: center; /* Allinea il testo al centro */
+  margin: 0px; /* Margine esterno */
+  background-color: #2b2b2b; /* Colore di sfondo per le info box */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Ombra per le info box */
+  height: 156px; /* Altezza fissa */
+  gap: 10px; /* Spazio tra gli elementi */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Transizione per l'effetto hover */
+}
+
+/* Effetto hover */
+.info-box-container div[class^="info"]:hover {
+  transform: scale(1.1); /* Ingrandisce leggermente il box al passaggio del mouse */
+  opacity: 0.9; /* Riduce leggermente l'opacità al passaggio del mouse */
+}
+
+/* Stili per i titoli e i paragrafi nelle Info Box */
+.info-box-container div[class^="info"] h3[id^="info"] strong,
+.info-box-container div[class^="info"] p[id^="info"] {
+  color: #ffffff; /* Colore del testo per titoli e paragrafi */
+}
+
+/* Stile per il contenitore del titolo */
+.title-container {
+  position: relative; /* Posizionamento relativo per il contenitore del titolo */
+  bottom: 50px; /* Posizione verticale rispetto al suo normale posizionamento */
+  font-size: 25px; /* Dimensione del font per il titolo */
+  margin: 10px; /* Margine per il contenitore del titolo */
+}
+
+/* Contenitore delle Credenziali: Stile per il box delle credenziali */
+.credential-box {
+  display: flex; /* Utilizza flexbox per la disposizione */
+  flex-direction: column; /* Dispone gli elementi in colonna */
+  align-items: center; /* Allinea gli elementi al centro orizzontale */
+  justify-content: center; /* Allinea gli elementi al centro verticale */
+  gap: 15px; /* Spazio tra gli elementi */
+  text-align: center; /* Allinea il testo al centro */
+  padding: 20px; /* Padding interno */
+  border-radius: 15px; /* Angoli arrotondati */
+  width: 480px; /* Larghezza fissa per il box delle credenziali */
+  height: 363px; /* Altezza fissa per il box delle credenziali */
+  background-color: rgba(40, 40, 40, 0.9); /* Colore di sfondo traslucido */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Ombra per il box delle credenziali */
+}
+
+/* Contenitore degli Input: Stile per il box degli input */
+.input-box {
+  display: flex; /* Utilizza flexbox per la disposizione interna */
+  flex-direction: column; /* Dispone gli elementi in colonna */
+  gap: 15px; /* Spazio tra gli input */
+  padding: 10px; /* Padding interno */
+}
+
+/* Stili per gli input di username e password */
+.input-box [id$="input"] {
+  padding: 10px; /* Padding interno per gli input */
+  border-radius: 10px; /* Angoli arrotondati per gli input */
+  border: 2px solid #444; /* Bordo grigio per gli input */
+  background-color: #2b2b2b; /* Colore di sfondo per gli input */
+  width: 392px; /* Larghezza fissa per gli input */
+  height: 50px; /* Altezza fissa per gli input */
+  border: solid 1px #444444; /* Bordo solido per gli input */
+  font-size: 16px; /* Dimensione del font per gli input */
+  color: white; /* Colore del testo per gli input */
+}
+
+.input-box [id$="input"]::placeholder {
+  font-size: 16px; /* Dimensione del font per il placeholder */
+}
+
+/* Stile Generale del Titolo */
+#title {
+  padding: 10px; /* Padding interno per il titolo */
+  color: whitesmoke; /* Colore del titolo */
+  font-size: 48px; /* Dimensione del font per il titolo */
+}
+
+/* Stile di base per il pulsante */
+#login-button {
+  position: relative;
+  top: 20px;
+  color: white; /* Colore del testo per il pulsante */
+  width: 94px; /* Larghezza fissa per il pulsante */
+  height: 45px; /* Altezza fissa per il pulsante */
+  border-radius: 10px; /* Angoli arrotondati per il pulsante */
+  background-color: #007bff; /* Colore di sfondo blu per il pulsante */
+  border: none; /* Rimuove il bordo predefinito */
+  font-size: 18px; /* Dimensione del testo per il pulsante */
+  cursor: pointer; /* Cambia il cursore al passaggio sopra il pulsante */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra per il pulsante */
+  transition: all 0.3s ease; /* Transizione per un'animazione fluida */
+}
+
+/* Effetto hover */
+#login-button:hover {
+  background-color: #0056b3; /* Cambia il colore di sfondo al passaggio del mouse */
+  transform: scale(1.1); /* Ingrandisce leggermente il pulsante al passaggio del mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Aggiunge più ombra al hover */
+}
+
+/* Effetto click (attivo) */
+#login-button:active {
+  transform: scale(0.95); /* Riduce leggermente la dimensione durante il click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Riduce l'ombra durante il click */
+  background-color: #004085; /* Colore leggermente più scuro al click */
+}
+
+#right-bar-title {
+  color: white; /* Colore del titolo del box di login */
+  font-size: 32px; /* Dimensione del font per il titolo */
+}
+
+.check-box-container {
+  position: relative; /* Posizionamento relativo per il contenitore della checkbox */
+  right: 100px; /* Sposta il contenitore verso destra */
+  color: white; /* Colore del testo della checkbox */
+}
+
+.toggle-password {
+  position: relative; /* Posizionamento relativo per l'icona del toggle password */
+  right: 40px; /* Sposta l'icona verso destra */
+  cursor: pointer; /* Cambia il cursore al passaggio sopra l'icona */
+}
